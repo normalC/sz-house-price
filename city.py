@@ -20,7 +20,8 @@ def get_hiddenvalue(url):
 def grab_page(pagesum):
     url = "http://zjj.sz.gov.cn/ris/bol/szfdc/index.aspx"
     #print(url)
-    headers = {    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36','Content-Type':'application/x-www-form-urlencoded'}
+    headers = {    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36',
+                   'Content-Type':'application/x-www-form-urlencoded'}
     #req = urllib.request.Request(url=url, headers=headers)
     #response = urllib.request.urlopen(req)
     #result = response.read().decode('utf-8')
