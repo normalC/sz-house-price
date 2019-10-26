@@ -5,9 +5,10 @@ import time
 import os
 
 def grab_single(pid, page):
-    url = "https://app02.szmqs.gov.cn/0501W/Iframe/LicItemIframe.aspx?licId=%s&page=%s"%(pid, page)
+    url = url2
     # print(url)
-    headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36'}
+    headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36',
+                 'Content-Type':'application/x-www-form-urlencoded'}
     req = urllib.request.Request(url=url, headers=headers)
     response = urllib.request.urlopen(req)
     result = response.read().decode('utf-8')
@@ -21,15 +22,29 @@ def grab_single(pid, page):
 
 def grab_page(name, pid):
     page = 1
-    url = "https://app02.szmqs.gov.cn/0501W/Iframe/LicItemIframe.aspx?licId=%s&page=%s"%(pid, page)
-    # print(url)
-    headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36'}
+    url = pid
+    print(url)
+    headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36',
+               'Content-Type': 'application/x-www-form-urlencoded'}
     req = urllib.request.Request(url=url, headers=headers)
     response = urllib.request.urlopen(req)
     result = response.read().decode('utf-8')
     selector=etree.HTML(result, parser=None, base_url=None)
-    page_span = selector.xpath('//*[@id="main"]/div[2]/div[2]/span[2]/text()')
+    print(selector)
+    items = selector.xpath('//*/td/a/@href')
+    #print(items)
+    for i in range(len(items)):
+        print("http://zjj.sz.gov.cn/ris/bol/szfdc/"+items[i])
+    lines = [items[i : i + 8] for i in range(0, len(items), 8)]
+    res = []
+    for line in lines:
+        res.append(','.join(line))
+    return res
+    print(res)
+    page_span = selector.xpath('//td/a/text()')
+    print(page_span )
     page_num = int(page_span[0].split('/')[1])
+    print(pid)
     print(page_num)
     res = []
     for page in range(1, page_num + 1):
@@ -40,16 +55,20 @@ def grab_page(name, pid):
     with open("property/%s.csv" % name, "w") as myfile:
         myfile.write(outline)
 
-rdlines = open('properties.csv').readlines()
+'''rdlines = open('properties.csv').readlines()
 
 for line in rdlines[:]:
     item = line.split(',')
     name = item[1]
     pid = item[-1][:-1]
-    print(name, pid)
+    #print(name, pid)
     if os.path.isfile("property/%s.csv" % name):
         continue
     try:
         grab_page(name, pid)
     except:
         pass
+'''
+url='http://zjj.sz.gov.cn/ris/bol/szfdc/projectdetail.aspx?id=41853'
+url2='http://zjj.sz.gov.cn/ris/bol/szfdc/building.aspx?id=34914&presellid=41853'
+grab_page('name', url)

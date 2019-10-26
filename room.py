@@ -1,0 +1,24 @@
+from lxml import etree
+import urllib.request
+import re
+import time
+import os
+
+def room(url):
+    url = url
+    # print(url)
+    headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36',
+                 'Content-Type':'application/x-www-form-urlencoded'}
+    req = urllib.request.Request(url=url, headers=headers)
+    response = urllib.request.urlopen(req)
+    result = response.read().decode('utf-8')
+    selector=etree.HTML(result, parser=None, base_url=None)
+    items = selector.xpath('//tr[@class="tab_body"]/td/text() | //tr[@class="tab_body bd1"]/td/text()')
+    lines = [items[i : i + 8] for i in range(0, len(items), 8)]
+    res = []
+    for line in lines:
+        res.append(','.join(line))
+    return res
+
+url='http://zjj.sz.gov.cn/ris/bol/szfdc/housedetail.aspx?id=1693544'
+a=room(url)

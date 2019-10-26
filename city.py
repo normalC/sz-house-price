@@ -67,12 +67,12 @@ def grab_page(pagesum):
 outlines = []
 outline= []
 output=[]
-outlines = grab_page(20)
+outlines = grab_page(2)
 rowNum = len(outlines)
 columnNum = len(outlines[0])
 print(rowNum,columnNum)
 with open("properties.csv", "w") as myfile:
-    myfile.write(','+','+'统计表\n')
+    myfile.write('')
 
 for i in range(0,rowNum):
     output= ''.join(outlines[i])
