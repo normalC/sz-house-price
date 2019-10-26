@@ -19,14 +19,28 @@ def building(name, pid):
     result = response.read().decode('utf-8')
     selector=etree.HTML(result, parser=None, base_url=None)
     items = selector.xpath('//tr/td/a/@href')
-    #print(items)
+    print(items)
     res = []
     for i in range(len(items)):
+        print(items[i])
         res+=unit.unit(items[i])
-    outline = '\n'.join(res)
-    with open("property/test.csv" % name, "w") as myfile:
+    outline = ''.join(res)
+    with open("propertyt.csv" , "w") as myfile:
         myfile.write(outline)
 
-
-url1='http://zjj.sz.gov.cn/ris/bol/szfdc/projectdetail.aspx?id=19377'
-building('name', url1)
+""""
+rdlines = open('properties.csv').readlines()
+for line in rdlines[:]:
+    item = line.split(',')
+    name = item[1]
+    pid = item[-1][:-1]
+    print(name, pid)
+    if os.path.isfile("property/%s.csv" % name):
+        continue
+    try:
+        building(name, pid)
+    except:
+        pass
+    """
+pid="http://zjj.sz.gov.cn/ris/bol/szfdc/projectdetail.aspx?id=19377"
+building("test",pid)

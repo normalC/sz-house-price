@@ -19,23 +19,21 @@ def unit(pid):
     selector1=etree.HTML(result1, parser=None, base_url=None)
     test=selector1.xpath('//div[@id="divShowBranch"]/a/@href')
     res = []
-    for i in range(len(test)):
+    for i in range(0,len(test)):
         urli=urlbase+test[i]
-        print(urli)
+        #print(urli)
         req = urllib.request.Request(url=urli, headers=headers)
         response = urllib.request.urlopen(req)
         result = response.read().decode('utf-8')
         selector = etree.HTML(result, parser=None, base_url=None)
         unitsum = selector.xpath('//tr/td/div/a/@href')
-        print(unitsum)
-
-
+        #print(unitsum)
         for i in range(len(unitsum)):
             line= room.room(unitsum[i])
             line.append('\n')
-            print(line)
+            #print(line)
             res+=line
-    print(res)
+    #print(res)
     return res
 
 
