@@ -7,7 +7,7 @@ import room
 
 
 def unit(pid):
-    #返回单元中的房间数
+    #返回单元中的房间数"building.aspx?id=34914&presellid=41853"
     url = "http://zjj.sz.gov.cn/ris/bol/szfdc/"+pid
     print(url)
     # print(url)
@@ -19,12 +19,13 @@ def unit(pid):
     selector=etree.HTML(result, parser=None, base_url=None)
     unitsum = selector.xpath('//tr/td/div/a/@href')
     #print(unitsum)
-    for i in range(len(unitsum)):
-        room.room(unitsum[i])
-    lines = [unitsum[i : i + 8] for i in range(0, len(unitsum), 8)]
     res = []
-    for line in lines:
-        res.append(','.join(line))
+    for i in range(len(unitsum)):
+       line= room.room(unitsum[i])
+       line.append('\n')
+       print(line)
+       res+=line
+    print(res)
     return res
 
 

@@ -74,7 +74,7 @@ columnNum = len(outlines[0])
 print(rowNum,columnNum)
 with open("properties.csv", "w") as myfile:
     myfile.write('')
-
+#z整个深圳的预售
 for i in range(0,rowNum):
     output= ''.join(outlines[i])
     with open("properties.csv", "a") as myfile:

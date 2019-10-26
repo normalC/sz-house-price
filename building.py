@@ -22,6 +22,7 @@ def grab_single(pid, page):
     return res
 
 def building(name, pid):
+    #返回栋数
     page = 1
     url = pid
     print(url)
@@ -38,4 +39,4 @@ def building(name, pid):
 
 url='http://zjj.sz.gov.cn/ris/bol/szfdc/building.aspx?id=34963&presellid=41997'
 url1='http://zjj.sz.gov.cn/ris/bol/szfdc/building.aspx?id=34914&presellid=41853'
-grab_page('name', url)
+building'name', url)

@@ -6,7 +6,7 @@ import os
 
 def room(pid):
     url = "http://zjj.sz.gov.cn/ris/bol/szfdc/" + pid
-    print(url)
+    #print(url)
     headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36',
                  'Content-Type':'application/x-www-form-urlencoded'}
     req = urllib.request.Request(url=url, headers=headers)
@@ -20,7 +20,7 @@ def room(pid):
         line=[x.strip() for x in line]
         res.append(','.join(line))
         #res.append(line)
-    print(res)
+    #print(res)
     return res
 
 pid="housedetail.aspx?id=1693521"
