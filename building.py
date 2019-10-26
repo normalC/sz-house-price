@@ -27,6 +27,6 @@ def building(name, pid):
     with open("property/test.csv" % name, "w") as myfile:
         myfile.write(outline)
 
-url='http://zjj.sz.gov.cn/ris/bol/szfdc/building.aspx?id=34963&presellid=41997'
-url1='http://zjj.sz.gov.cn/ris/bol/szfdc/projectdetail.aspx?id=41853'
+
+url1='http://zjj.sz.gov.cn/ris/bol/szfdc/projectdetail.aspx?id=19377'
 building('name', url1)
