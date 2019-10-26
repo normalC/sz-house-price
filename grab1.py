@@ -36,6 +36,7 @@ def grab_page():
 
         newline = ','.join(line)
         res.append(newline)
+        print(type(res))
     return res
 
 outlines = []
