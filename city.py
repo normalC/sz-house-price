@@ -56,7 +56,7 @@ def grab_page(pagesum):
             line.append(presellnumber[i].strip())
             line.append(locations[i].strip())
             line.append(dates[i].strip())
-            line.append("http://zjj.sz.gov.cn/ris/bol/szfdc/" + id_list[i].strip())
+            line.append(id_list[i].strip())
             newline = ','.join(line)
             res.append(newline)
             res.append('\n')
@@ -77,7 +77,7 @@ with open("properties.csv", "w") as myfile:
 #z整个深圳的预售
 for i in range(0,rowNum):
     output= ''.join(outlines[i])
-    with open("properties.csv", "a") as myfile:
+    with open("shenzhencity.csv", "a") as myfile:
         myfile.write(output)
 
 

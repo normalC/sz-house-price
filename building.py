@@ -10,8 +10,8 @@ import unit
 def building(name, pid):
     #返回栋数
     page = 1
-    url = pid
-    print(url)
+    url = "http://zjj.sz.gov.cn/ris/bol/szfdc/"+pid
+    #print(url)
     headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36',
                'Content-Type': 'application/x-www-form-urlencoded'}
     req = urllib.request.Request(url=url, headers=headers)
@@ -19,28 +19,28 @@ def building(name, pid):
     result = response.read().decode('utf-8')
     selector=etree.HTML(result, parser=None, base_url=None)
     items = selector.xpath('//tr/td/a/@href')
-    print(items)
+    #print(items)
     res = []
     for i in range(len(items)):
-        print(items[i])
+        #print(items[i])
         res+=unit.unit(items[i])
     outline = ''.join(res)
-    with open("propertyt.csv" , "w") as myfile:
+    with open("property/%s.csv" % name, "w") as myfile:
         myfile.write(outline)
 
-""""
-rdlines = open('properties.csv').readlines()
+rdlines = open('shenzhencity.csv').readlines()
 for line in rdlines[:]:
     item = line.split(',')
-    name = item[1]
+    name = item[3]+"-"+item[1]
     pid = item[-1][:-1]
-    print(name, pid)
+    #print(name, pid)
     if os.path.isfile("property/%s.csv" % name):
         continue
     try:
+        #print("test")
         building(name, pid)
     except:
         pass
-    """
-pid="http://zjj.sz.gov.cn/ris/bol/szfdc/projectdetail.aspx?id=19377"
-building("test",pid)
+
+#pid="http://zjj.sz.gov.cn/ris/bol/szfdc/projectdetail.aspx?id=19377"
+#building("test",pid)

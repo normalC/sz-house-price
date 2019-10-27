@@ -14,14 +14,13 @@ def room(pid):
     result = response.read().decode('utf-8')
     selector=etree.HTML(result, parser=None, base_url=None)
     items = selector.xpath('//*/td/text()')
-    lines = [(items[i : i + 8]) for i in range(0, len(items), 8)]
+    lines = [(items[i : i+8]) for i in range(0, len(items),8)]
     res = []
     for line in lines:
-        line=[x.strip() for x in line]
+        line=[x.strip() for x in line ]
         res.append(','.join(line))
-        #res.append(line)
-    #print(res)
+    print(res)
     return res
 
-pid="housedetail.aspx?id=1693521"
-room(pid)
+#pid="housedetail.aspx?id=1693521"
+#room(pid)
