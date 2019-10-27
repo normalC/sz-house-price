@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6a2f12e-be54-4f6c-aa08-45363e3fbd10" name="默认的" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/propertyt.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/参考doasp.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/参考grab.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/参考grab1.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/参考grab_single.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/参考grab_single1.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/building.py" afterPath="$PROJECT_DIR$/building.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/city.py" afterPath="$PROJECT_DIR$/city.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/properties.csv" afterPath="$PROJECT_DIR$/properties.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/room.py" afterPath="$PROJECT_DIR$/room.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit.py" afterPath="$PROJECT_DIR$/unit.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,8 +29,8 @@
       <file leaf-file-name="building.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/building.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="31" />
+            <state relative-caret-position="79">
+              <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -326,6 +314,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="732" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25377643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -336,7 +325,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33898306" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15762712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -592,8 +581,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/building.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="31" />
+        <state relative-caret-position="79">
+          <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
