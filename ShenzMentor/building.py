@@ -28,19 +28,19 @@ def building(name, pid):
     with open("property/%s.csv" % name, "w") as myfile:
         myfile.write(outline)
 
-# rdlines = open('shenzhencity.csv').readlines()
-# for line in rdlines[:]:
-    # item = line.split(',')
-    # name = item[3]+"-"+item[1]
-    # pid = item[-1][:-1]
-    # #print(name, pid)
-    # if os.path.isfile("property/%s.csv" % name):
-        # continue
-    # try:
-        # #print("test")
-        # building(name, pid)
-    # except:
-        # pass
+rdlines = open('shenzhencity.csv').readlines()
+for line in rdlines[:]:
+    item = line.split(',')
+    name = item[3]+"-"+item[1]
+    pid = item[-1][:-1]
+    #print(name, pid)
+    if os.path.isfile("property/%s.csv" % name):
+        continue
+    try:
+        #print("test")
+        building(name, pid)
+    except:
+        pass
 
-pid="projectdetail.aspx?id=77965"
-building("test",pid)
+# pid="projectdetail.aspx?id=77965"
+# building("test",pid)
