@@ -11,7 +11,7 @@ def building(name, pid):
     #返回栋数
     page = 1
     url = "http://zjj.sz.gov.cn/ris/bol/szfdc/"+pid
-    print(url)
+    # print(url)
     headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36',
                'Content-Type': 'application/x-www-form-urlencoded'}
     req = urllib.request.Request(url=url, headers=headers)
