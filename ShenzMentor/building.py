@@ -21,7 +21,7 @@ def building(name, pid):
     items = selector.xpath('//tr/td/a/@href')
     #print(items)
     res = []
-    for i in range(len(items)):
+    for i in range (len(items)):
         #print(items[i])
         res+=unit.unit(items[i])
     outline = ''.join(res)
